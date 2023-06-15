@@ -11,11 +11,12 @@ class SchoolMap extends Component
     public $selectedBuilding;
     public $showInfo;
     public $showDescription;
-    
+    public $showNewData = false;
+
     public function mount()
     {
         $this->selectedBuilding = null;
-        // Obtener la información de los edificios
+        // Obtener la información de los salones de la escuela de la base de datos o de otra fuente de datos
         $this->buildings = Building::all();
     }
 
@@ -41,6 +42,13 @@ class SchoolMap extends Component
 
     public function showDescription()
     {
+
+        ///ejemplo de role no va aqui solo lo pegue, era algo asi
+        // if $User->hasRole('guest'){
+          //  return true
+        //}
+       //return false
+
         $this->showDescription = true;
     }
 
@@ -48,4 +56,10 @@ class SchoolMap extends Component
     {
         $this->showDescription = false;
     }
+
+    public function showNewData()
+{
+    $this->showNewData = true;
+}
+
 }

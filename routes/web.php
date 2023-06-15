@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('dashboard');
+})->name('dashboard');
+
 Route::get('/counter', function () {
     return view('livewire.counter');
 });
@@ -25,3 +26,14 @@ Route::get('/map', function () {
 });
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
+Route::get('/formalities', function () {
+    return view('data.formalities');
+})->name('formalities');
+
+Route::get('/staff', function () {
+    return view('data.staff');
+})->name('staff');
